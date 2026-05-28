@@ -448,42 +448,153 @@ body.cursor-hover .cursor-ring {
    RESPONSIVE
    ======================== */
 @media (max-width: 1024px) {
-  .profil-grid { grid-template-columns: 300px 1fr; gap: 3rem; }
-  .refleksi-grid { grid-template-columns: 1fr; }
+  .profil-grid { grid-template-columns: 300px 1fr; gap: 2.5rem; }
+  .profil-info h1 { font-size: 2.4rem; }
+  
+  .refleksi-grid { grid-template-columns: 1fr; gap: 24px; }
+  .refleksi-card { padding: 32px 24px; }
+  
+  .filosofi-wrapper { padding: 45px 35px; }
+  .filosofi-content p { font-size: 1.1rem; line-height: 1.9; }
 }
 @media (max-width: 768px) {
   .container { padding: 0 1.2rem; }
   .navbar { width: 96%; border-radius: 0 0 20px 20px; }
+  .nav-brand img { height: 40px; }
+  .nav-brand-text .top { font-size: 0.75rem; }
+  .nav-brand-text .bottom { font-size: 0.65rem; }
+  
   .nav-links {
-    display: none; position: absolute; top: 100%;
-    left: 0; right: 0; flex-direction: column;
+    display: none; position: fixed; top: 60px;
+    left: 12px; right: 12px; flex-direction: column;
     background: rgba(12,10,9,0.98); backdrop-filter: blur(20px);
-    padding: 1.5rem; gap: 0.5rem;
+    padding: 1.2rem; gap: 0.3rem;
     border-radius: 0 0 var(--radius-md) var(--radius-md);
     border: 1px solid var(--border-subtle); border-top: none;
+    max-height: calc(100vh - 80px); overflow-y: auto;
+    z-index: 4999;
   }
   .nav-links.active { display: flex; }
-  .nav-links a { padding: 12px 16px; border-radius: var(--radius-sm); }
-  .nav-links a:hover { background: rgba(217,119,6,0.08); }
-  .menu-btn { display: block; }
+  .nav-links a { 
+    padding: 14px 16px; border-radius: var(--radius-sm);
+    font-size: 0.95rem; display: block;
+  }
+  .nav-links a:hover { background: rgba(217,119,6,0.12); color: var(--primary-light); }
+  .nav-links a::after { display: none; }
+  
+  .menu-btn { 
+    display: flex; font-size: 1.4rem; color: #fff; 
+    background: none; border: none; z-index: 5001;
+    transition: color 0.3s;
+  }
+  .menu-btn:hover { color: var(--primary-light); }
+  
   .hero { padding: 100px 0 60px; }
-  .hero-title { font-size: 2.5rem; }
-  .hero-subtitle { font-size: 1.1rem; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-subtitle { font-size: 1rem; }
+  .hero-actions { flex-direction: column; gap: 12px; }
+  
+  .btn-ember { 
+    width: 100%; justify-content: center; 
+    padding: 12px 28px; font-size: 0.85rem;
+  }
+  
   .profil-grid { grid-template-columns: 1fr; text-align: center; }
-  .profil-photo-card { max-width: 300px; margin: 0 auto; }
+  .profil-photo-card { max-width: 280px; margin: 0 auto; }
   .profil-divider { margin: 1.5rem auto; }
+  .profil-info h1 { font-size: 2.2rem; }
   .info-tiles { grid-template-columns: 1fr; }
-  .profil-bio { text-align: left; }
-  .timeline::before { left: 20px; }
-  .timeline-item, .timeline-item:nth-child(odd) { flex-direction: column; text-align: left; padding-left: 50px; }
-  .timeline-dot { left: 20px; }
+  .profil-bio { text-align: left; border-left-width: 2px; }
+  
+  .refleksi-grid { grid-template-columns: 1fr; gap: 20px; }
+  .refleksi-card { padding: 28px 20px; }
+  
+  .timeline::before { left: 16px; }
+  .timeline-item, .timeline-item:nth-child(odd) { 
+    flex-direction: column; text-align: left; padding-left: 40px;
+  }
+  .timeline-dot { left: 16px; }
   .timeline-content { max-width: 100%; }
-  .filosofi-wrapper { padding: 40px 28px; }
-  .footer-closing { padding: 36px 24px; }
+  .timeline-content h3 { font-size: 1.1rem; }
+  
+  .filosofi-wrapper { 
+    padding: 32px 20px; 
+    max-width: 100%;
+  }
+  .filosofi-content p { 
+    font-size: 1.05rem; line-height: 1.7;
+  }
+  .filosofi-signature { 
+    flex-direction: column; align-items: center; text-align: center;
+    gap: 12px;
+  }
+  .filosofi-signature img { width: 48px; height: 48px; }
+  
+  .footer-closing { padding: 30px 20px; }
+  .footer-closing h2 { font-size: 1.6rem; }
+  .back-to-top { width: 44px; height: 44px; bottom: 20px; right: 20px; font-size: 0.9rem; }
 }
 @media (max-width: 480px) {
-  .hero-title { font-size: 2rem; }
-  .hero-actions { flex-direction: column; }
-  .btn-ember { width: 100%; justify-content: center; }
-  .profil-info h1 { font-size: 2rem; }
+  .hero-title { font-size: 1.8rem; }
+  .hero-subtitle { font-size: 0.95rem; margin-bottom: 1.5rem; }
+  .hero-actions { flex-direction: column; gap: 10px; }
+  .btn-ember { 
+    width: 100%; justify-content: center; 
+    padding: 11px 24px; font-size: 0.8rem; letter-spacing: 1px;
+  }
+  
+  .profil-info h1 { font-size: 1.8rem; }
+  .profil-info .label-tag { font-size: 0.7rem; }
+  
+  .section-header h2 { font-size: 1.6rem; }
+  .section-header p { font-size: 0.95rem; }
+  
+  .refleksi-card { 
+    padding: 20px 16px; 
+  }
+  .refleksi-icon { 
+    width: 48px; height: 48px; 
+    font-size: 1.1rem;
+  }
+  .refleksi-card h3 { font-size: 1.1rem; }
+  .refleksi-card p { font-size: 0.88rem; }
+  
+  .timeline-item { padding-left: 32px; margin-bottom: 40px; }
+  .timeline-dot { left: 12px; width: 14px; height: 14px; }
+  .timeline-phase { font-size: 0.65rem; }
+  .timeline-content h3 { font-size: 1rem; }
+  .timeline-content p { font-size: 0.85rem; }
+  
+  .filosofi-wrapper { 
+    padding: 24px 16px;
+    border-radius: var(--radius-md);
+  }
+  .filosofi-wrapper::before { 
+    font-size: 6rem; 
+    left: 10px; 
+    top: -10px;
+  }
+  .filosofi-tag { 
+    font-size: 0.7rem; 
+    margin-bottom: 1.5rem;
+  }
+  .filosofi-content p { 
+    font-size: 0.95rem; 
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+  .filosofi-signature { 
+    margin-top: 1.5rem; 
+    padding-top: 1.5rem;
+  }
+  .filosofi-signature img { 
+    width: 44px; 
+    height: 44px; 
+  }
+  .filosofi-signature .sig-name { font-size: 0.9rem; }
+  .filosofi-signature .sig-title { font-size: 0.7rem; }
+  
+  .footer-closing h2 { font-size: 1.4rem; }
+  .footer-closing p { font-size: 0.9rem; }
+  .footer-quote { font-size: 0.95rem; }
 }

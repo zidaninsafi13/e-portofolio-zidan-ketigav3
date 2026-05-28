@@ -1,1 +1,0 @@
-Masukkan file di folder: penilaian
